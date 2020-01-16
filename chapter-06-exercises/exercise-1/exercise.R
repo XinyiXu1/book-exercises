@@ -45,4 +45,11 @@ round_2 <- round(fav_2,digit = 1)
 sum_round <- sum(round_1, round_2)
 
 # Which is bigger, `round_sum` or `sum_round`? (You can use the `max()` function!)
-max(round_sum, sum_round)
+bigger <- function(round_sum, sum_round) {
+   if (max(round_sum, sum_round) >  round_sum) 
+     print("sum_round is bigger")
+   else
+     print("round_sum is bigger")
+}
+
+
