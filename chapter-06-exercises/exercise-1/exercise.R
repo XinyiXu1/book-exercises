@@ -16,13 +16,12 @@ now_doing <- paste(my_name, " is programming!")
 
 # Make the `now_doing` variable upper case
 now_doing <- toupper(now_doing)
-print(now_doing)
 ### Bonus
 
 # Pick two of your favorite numbers (between 1 and 100) and assign them to 
 # variables `fav_1` and `fav_2`
 fav_1 <- 50
-fav_2 <-100
+fav_2 <- 100
 # Divide each number by the square root of 201 and save the new value in the
 # original variable
 fav_1 <- fav_1/sqrt(201)
