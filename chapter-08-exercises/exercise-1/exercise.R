@@ -22,7 +22,7 @@ dinner <- meal$dinner
 
 # Use double-bracket notation to extract your `lunch` element from your list
 # and save it in your list as the element at index 5 (no reason beyond practice)
-meal["5"] = meal[["lunch"]]
+meal[5] = meal[3]
 print(meal)
 
 # Use single-bracket notation to extract your breakfast and lunch from your list
