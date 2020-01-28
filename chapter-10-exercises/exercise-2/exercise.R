@@ -5,10 +5,12 @@
 # "Employee"
 employees <- paste("Employee", c(1:100))
 print(employees)
+
 # Create a vector of 100 random salaries for the year 2017
 # Use the `runif()` function to pick random numbers between 40000 and 50000
 salaries_in_2017 <- runif(100, min = 40000, max = 50000)
 print(salaries_in_2017)
+
 # Create a vector of 100 annual salary adjustments between -5000 and 10000.
 # (A negative number represents a salary decrease due to corporate greed)
 # Again use the `runif()` function to pick 100 random numbers in that range.
@@ -23,9 +25,9 @@ salaries <- data.frame(
 
 # Add a column to the `salaries` data frame that represents each person's
 # salary in 2018 (e.g., with the salary adjustment added in).
-
 salaries[,4] =  salaries_in_2017 + annual_salary
 colnames(salaries)[4] <-  "salary_in_2018"
+
 # Add a column to the `salaries` data frame that has a value of `TRUE` if the 
 # person got a raise (their salary went up)
 salaries[,5] =  salaries$salary_in_2018 - salaries$salaries_in_2017 > 0

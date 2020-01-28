@@ -17,29 +17,26 @@ is.vector(organization)
 # function. 
 # This is a useful debugging tip if you hit errors later!
 
-
 ## Now you can ask some interesting questions about the dataset
 
 # What was the mean grant value?
 average <- mean(grants[,"total_amount"])
-print(average)
 
 # What was the dollar amount of the largest grant?
 largest_grant <- max(grants[,"total_amount"])
-print(largest_grant)
 
 # What was the dollar amount of the smallest grant?
 smallest <- min(grants[, "total_amount"])
-print(smallest)
 
 # Which organization received the largest grant?
 largest_ognization <- grants[grants$total_amount == largest_grant, "organization"]
-print(largest_ognization)
 
 # Which organization received the smallest grant?
-smallest_ognization <- grants[grants$total_amount == smallest, "organization"]
-print(smallest_ognization)
+smallest_ognization <- grants[grants$total_amount == smallest,-c("organization")]
 
 # How many grants were awarded in 2010?
 award_2010 <- nrow(grants[ grants$start_year == 2010 , ])
-print(award_2010)
+
+#how much money was awarded in 2010?
+sum(grants[grants$start_year == "2010", "total_amount"])
+
