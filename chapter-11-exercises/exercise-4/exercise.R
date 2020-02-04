@@ -20,7 +20,9 @@ print(colnames(flights))
 # Use `dplyr` to give the data frame a new column that is the amount of time
 # gained or lost while flying (that is: how much of the delay arriving occured
 # during flight, as opposed to before departing).
-flights <- mutate(flights, delayed_in_air = (arr_delay - dep_delay))
+flights %>% 
+   mutate(delayed_in_air = (arr_delay - dep_delay))
+
 
 # Use `dplyr` to sort your data frame in descending order by the column you just
 # created. Remember to save this as a variable (or in the same one!)
@@ -36,7 +38,8 @@ View(flights)
 
 # On average, did flights gain or lose time?
 # Note: use the `na.rm = TRUE` argument to remove NA values from your aggregation
-#summarize(flights, average = mean(delayed_in_air, na.rm = TRUE))
+flights %>% 
+mutate(average = mean(delayed_in_air, na.rm = TRUE))
 
 # Create a data.frame of flights headed to SeaTac ('SEA'), only including the
 # origin, destination, and the "gain_in_air" column you just created
@@ -45,11 +48,8 @@ flights %>%
   select(origin,dest,delayed_in_air) %>% 
   summarize(to_sea, average = mean(delayed_in_air, na.rm = TRUE)) %>% 
   pull(average)
-#to_sea <- filter( flights, dest == "SEA")
-#to_sea <- select(to_sea, origin,dest,delayed_in_air)
 
 # On average, did flights to SeaTac gain or loose time?
-  
 summarize(to_sea, average = mean(delayed_in_air, na.rm = TRUE))
 
 # Consider flights from JFK to SEA. What was the average, min, and max air time

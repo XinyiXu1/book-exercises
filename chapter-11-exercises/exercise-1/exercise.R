@@ -23,7 +23,6 @@ print(manuafacturer)
 # Use the `unique()` function to determine how many different car manufacturers
 # are represented by the data set
 print( length(unique(manuafacturer)))
-
 # Filter the data set for vehicles manufactured in 1997
 vehicles_1997 <- filter(vehicles, year == 1997)
 View(vehicles_1997)
@@ -31,10 +30,13 @@ View(vehicles_1997)
 
 # Arrange the 1997 cars by highway (`hwy`) gas milage
 # Hint: use the `order()` function to get a vector of indices in order by value
+vehicles_1997 <- arrange(vehicles_1997, order(hwy))
+View(vehicles_1997)
 # See also:
 # https://www.r-bloggers.com/r-sorting-a-data-frame-by-the-contents-of-a-column/
 # Mutate the 1997 cars data frame to add a column `average` that has the average
 # gas milage (between city and highway mpg) for each car
+vehicles_1997 <- mutate(vehicles_1997, )
 
 # Filter the whole vehicles data set for 2-Wheel Drive vehicles that get more
 # than 20 miles/gallon in the city. 
