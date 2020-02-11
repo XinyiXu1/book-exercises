@@ -5,6 +5,7 @@
 install.packages("httr")
 library("httr")
 install.packages("jsonlite")
+
 # Create a variable base_uri that stores the base URI (as a string) for the 
 # Github API (https://api.github.com)
 
@@ -41,7 +42,7 @@ query_params <- list(q = "graphics")
 # Send a GET request to the `search_endpoint`--including your params list as the
 # `query`. Print the response to show that your request worked.
 response <- GET(paste0(base_uri,search_endpoint,query = query_params))
-peint(response)
+print(response)
 # Extract the content of the response and convert it from a JSON string into a
 # data frame. 
 text_extract <- content(response,"text")
